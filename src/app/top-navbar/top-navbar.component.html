@@ -1,0 +1,19 @@
+<div class="nav-bar">
+    <div>
+        <!-- <button class="nav-menu"><i class="fa fa-bars"></i></button> -->
+        <button class="nav-title" (click)="util.navTo('')">Spica</button>
+    </div>
+    <div class="nav-search">
+        <i class="fa fa-search nav-search-icon"></i>
+        <input type="text" class="nav-search-text" placeholder="Search for tasks or records" (focus)="focusSearch()" (blur)="blurSearch()">
+    </div>
+    <span class="nav-spacer"></span>
+    <button class="nav-account" [matMenuTriggerFor]="menu">
+        <i class="fa fa-user menu-icon"></i>
+        <span>My Account</span>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item class="menu-item">Prospect</button>
+        <button mat-menu-item class="menu-item">Customer</button>
+    </mat-menu>
+</div>

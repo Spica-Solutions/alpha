@@ -1,1 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+
+* { margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Global Styles */
+.fixed {
+    position: fixed;
+}
+.top {
+    top: 0
+}
+.wfull {
+    width: 100%;
+}
+.whalf {
+    width: 50%;
+}
+.col-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 12px;
+}
+.fld-default {
+    width: 200px;
+}
+.fld-email {
+    width: 100%;
+}
+.fld-phone {
+    width: 125px;
+}
+.fld-state {
+    width: 200px;
+}
+.fld-zip {
+    width: 100px;
+}
+.fld-country {
+    width: 320px;
+}
+.section {
+    padding: 16px 32px;
+    /* background-color: #ccc; */
+}
+.section-header, .section-content {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: #424242;
+}
+.section-header {
+    font-weight: 500;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.section-content {
+    font-size: 14px;
+}
+
+/* Sidenav Form */
+.sidenav-form {
+    width: 512px;
+}
+
+
+
+/* Custom Angular Material Component Styles - START */
+/* Stepper */
+.mat-horizontal-stepper-header-container {
+    display: inline-flex;
+}
+.mat-horizontal-stepper-header {
+    height: 32px !important;
+    padding: 0 !important;
+    /* padding-right: 16px; */
+}
+.mat-stepper-horizontal-line {
+    margin: 0 16px !important;
+    width: 32px !important;
+    flex: none !important;
+}
+.mat-horizontal-content-container {
+    padding: 24px 0 !important;
+}
+
+/* Toggle Button */
+.mat-button-toggle-group-appearance-standard {
+    margin-bottom: 1.25em;
+}
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 2.35em;
+    font-size: 13px;
+}
+
+/* Button */
+.mat-raised-button {
+    margin: 0 16px 0 2px !important
+}
+
+/* Form Field */
+/* .mat-form-field-wrapper {
+    padding-bottom: 0.125em;
+} */
+mat-form-field.mat-form-field {
+    padding: 0;
+    /* margin-top: -0.25em; */
+    font-size: 13px;
+}
+mat-form-field.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.375em 0 0.75em 0;
+}
+mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
+    top: 1.5em;
+}
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.2em) scale(0.8);
+}
+/* Custom Angular Material Component Styles - END */
