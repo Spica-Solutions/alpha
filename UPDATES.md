@@ -13,3 +13,10 @@
 - Implemented child routing for record/customer?[params]
 - Fixed page title for record/customer route
 
+0.0.3 - Aug 31 2020
+- Created the following components:
+    > customer-edit
+    > customer-new
+    > sublist
+    > address-book
+

@@ -1,0 +1,162 @@
+<mat-horizontal-stepper class="sidenav-form">
+    <mat-step>
+        <ng-template matStepLabel>General information</ng-template>
+
+        <form [formGroup]="genInfoForm">
+            <div class="form-row">
+                <!-- Status -->
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-default"
+                    *ngIf="rtype === 'lead'">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status" required>
+                        <mat-option value="1">Unqualified</mat-option>
+                        <mat-option value="2">In Discussion</mat-option>
+                        <mat-option value="3">Proposal</mat-option>
+                        <mat-option value="4">In Negotiation</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- Status -->
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-default"
+                    *ngIf="rtype === 'customer'">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status" required>
+                        <mat-option value="1">Won</mat-option>
+                        <mat-option value="2">Lost</mat-option>
+                        <mat-option value="3">For Renewal</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <!-- Company | Individual -->
+            <div class="form-row">
+                <!-- #iscompany="matButtonToggleGroup" -->
+                <mat-button-toggle-group formControlName="iscompany"
+                    required>
+                    <mat-button-toggle value="true">Company</mat-button-toggle>
+                    <mat-button-toggle value="false">Individual</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+    
+            <!-- Company Name -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-name">
+                    <mat-label>Name</mat-label>
+                    <input matInput required formControlName="name">
+                </mat-form-field>
+            </div>
+    
+            <!-- Email -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-email">
+                    <mat-label>Email</mat-label>
+                    <input matInput required formControlName="email">
+                </mat-form-field>
+            </div>
+    
+            <!-- Phone -->
+            <div class="form-row col-2">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-phone">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput required formControlName="phone">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="fld-phone">
+                    <mat-label>Alt. Phone</mat-label>
+                    <input matInput formControlName="altphone">
+                </mat-form-field>
+            </div>
+
+            <div class="sidenav-form-actions">
+                <button
+                    mat-raised-button
+                    matStepperNext
+                    color="primary">Next</button>
+            </div>
+        </form>
+
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Address</ng-template>
+
+        <form [formGroup]="addressForm">
+            <!-- Country -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="wfull">
+                    <mat-label>Country</mat-label>
+                    <mat-select required>
+                        <mat-option value="PHI">Philippines</mat-option>
+                        <mat-option value="USA">United States of America</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Address 1 -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="wfull">
+                    <mat-label>Address line 1</mat-label>
+                    <input matInput required>
+                </mat-form-field><br>
+            </div>
+
+            <!-- Address 2 -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="wfull">
+                    <mat-label>Address line 2</mat-label>
+                    <input matInput>
+                </mat-form-field><br>
+            </div>
+
+            <!-- City -->
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="fld-default">
+                    <mat-label>City</mat-label>
+                    <input matInput required>
+                </mat-form-field><br>
+            </div>
+
+            <div class="form-row col-2">
+                <!-- State -->
+                <mat-form-field appearance="outline" class="fld-state">
+                    <mat-label>State</mat-label>
+                    <mat-select required>
+                        <mat-option value="AL">Alabama</mat-option>
+                        <mat-option value="AK">Alaska</mat-option>
+                        <mat-option value="AR">Arkansas</mat-option>
+                        <mat-option value="NC">North Carolina</mat-option>
+                        <mat-option value="SC">South Carolina</mat-option>
+                        <mat-option value="WV">West Virginia</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- Zip -->
+                <mat-form-field appearance="outline" class="fld-zip">
+                    <mat-label>Zip</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+
+            <div class="sidenav-form-actions">
+                <button mat-raised-button matStepperPrevious>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" (click)="submitRec()">Create {{rtype | titlecase}}</button>
+            </div>
+        </form>
+    
+    </mat-step>
+</mat-horizontal-stepper>

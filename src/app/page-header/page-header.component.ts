@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AppUtilService } from 'src/app/_services/app-util.service';
+import { AppUIService } from 'src/app/_services/app-ui.service';
 
 @Component({
   selector: 'app-page-header',
@@ -18,19 +18,19 @@ export class PageHeaderComponent implements OnInit {
 
   // Services
   subscription: Subscription;
-  util: AppUtilService;
+  ui: AppUIService;
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private utilSvc: AppUtilService
+    private uiSvc: AppUIService
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.util = utilSvc;
+    this.ui = uiSvc;
   }
 
   ngOnInit(): void {
-    this.subscription = this.util.onSetPageTitleChange().subscribe(d => {
+    this.subscription = this.ui.onSetPageTitleChange().subscribe(d => {
       if (d) {
         this.pageTitle = d;
       }

@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerComponent } from './customer.component';
+import { CustomerNewComponent } from '../customer-new/customer-new.component';
+import { CustomerEditComponent } from '../customer-edit/customer-edit.component';
+import { AddressBookComponent } from '../address-book/address-book.component';
+import { SublistComponent } from '../sublist/sublist.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -14,19 +19,27 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
-  declarations: [CustomerComponent],
-  imports: [
-    CommonModule,
-    CustomerRoutingModule,
+    declarations: [
+        CustomerComponent,
+        CustomerNewComponent,
+        CustomerEditComponent,
+        AddressBookComponent,
+        SublistComponent
+    ],
+    imports: [
+        CommonModule,
+        CustomerRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
 
-    // Angular Components
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatStepperModule,
-    MatTabsModule
-  ]
+        // Angular Components
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatStepperModule,
+        MatTabsModule
+    ]
 })
 export class CustomerModule { }

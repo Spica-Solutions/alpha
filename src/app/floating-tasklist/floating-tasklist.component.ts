@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppUtilService } from 'src/app/_services/app-util.service';
+import { AppUIService } from 'src/app/_services/app-ui.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class FloatingTasklistComponent implements OnInit {
 
-  util: AppUtilService;
+  ui: AppUIService;
 
   constructor(
-    private utilSvc: AppUtilService
+    private uiSvc: AppUIService
   ) {
-    this.util = utilSvc;
+    this.ui = uiSvc;
   }
 
   ngOnInit(): void {

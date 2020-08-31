@@ -1,0 +1,16 @@
+<div class="sublist-header">
+    <span class="sublist-title">Address Book</span>
+    <button type="button" mat-flat-button color="primary">
+        <i class="fa fa-plus"></i> ADD
+    </button>
+</div>
+<div class="sublist-controls">
+    <button type="button" mat-flat-button>Select All</button>
+    <button type="button" mat-flat-button>Select None</button>
+</div>
+<div class="sublist-content" *ngIf="dispType == 'grid'">
+    grid
+</div>
+<div class="sublist-content" *ngIf="dispType == 'tiles'">
+    tiles
+</div>

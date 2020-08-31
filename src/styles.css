@@ -18,28 +18,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 50%;
 }
 .col-2 {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 12px;
-}
-.fld-default {
-    width: 200px;
-}
-.fld-email {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    /* grid-template-columns: auto auto; */
+    /* grid-column-gap: 12px; */
+    /* border: 1px solid green; */
 }
-.fld-phone {
-    width: 125px;
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
 }
-.fld-state {
-    width: 200px;
-}
-.fld-zip {
-    width: 100px;
-}
-.fld-country {
-    width: 320px;
-}
+
+/* Sections */
 .section {
     padding: 16px 32px;
     /* background-color: #ccc; */
@@ -57,10 +50,66 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 14px;
 }
 
+/* Forms */
+.form-row {
+    /* margin-bottom: 1.34375em; */
+    margin-bottom: 1.2em;
+}
+
 /* Sidenav Form */
 .sidenav-form {
     width: 512px;
 }
+
+/* Form Fields */
+.fld-default {
+    width: 200px;
+}
+.fld-name, .fld-email {
+    width: 375px;
+}
+.fld-phone {
+    width: 125px;
+}
+.fld-state {
+    width: 200px;
+}
+.fld-zip {
+    width: 100px;
+}
+.fld-country {
+    width: 320px;
+}
+
+/* Sublists */
+.sublist { 
+    border: 0px solid red;
+}
+.sublist-header {
+    /* margin-bottom: 8px; */
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.sublist-title {
+    font-weight: 500;
+}
+.sublist-controls {
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+.sublist-controls button {
+    font-size: 12px;
+}
+.sublist-content {
+    border: 1px solid red;
+}
+
 
 
 
@@ -85,22 +134,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Toggle Button */
 .mat-button-toggle-group-appearance-standard {
-    margin-bottom: 1.25em;
+    /* margin-bottom: 1.25em; */
+    margin-bottom: 0;
 }
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-    line-height: 2.35em;
+    margin: 0.25em 0;
+    line-height: 2.6em;
     font-size: 13px;
 }
 
 /* Button */
 .mat-raised-button {
-    margin: 0 16px 0 2px !important
+    margin: 0 16px 0 2px !important;
+    /* padding: 2px 16px !important; */
 }
 
 /* Form Field */
-/* .mat-form-field-wrapper {
-    padding-bottom: 0.125em;
-} */
+.mat-form-field-wrapper {
+    /* padding-bottom: 1.34375em; */
+    padding-bottom: 0;
+}
 mat-form-field.mat-form-field {
     padding: 0;
     /* margin-top: -0.25em; */
@@ -113,6 +166,11 @@ mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
     top: 1.5em;
 }
 mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translateY(-1.2em) scale(0.8);
+    transform: translateY(-1.4em) scale(1);
+}
+
+/* Tab Group */
+mat-tab-body {
+    padding: 20px 0;
 }
 /* Custom Angular Material Component Styles - END */

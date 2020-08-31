@@ -1,0 +1,83 @@
+<form [formGroup]="editGenInfoForm">
+    <div class="col-2" style="border: 0px solid red;">
+        <div class="col">
+
+            <!-- Company | Individual -->
+            <div class="form-row">
+                <mat-button-toggle-group formControlName="iscompany"
+                    required>
+                    <mat-button-toggle value="true">Company</mat-button-toggle>
+                    <mat-button-toggle value="false">Individual</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+
+            <!-- Lead Status -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-default"
+                    *ngIf="rtype === ''">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status" required>
+                        <mat-option value="1">Unqualified</mat-option>
+                        <mat-option value="2">In Discussion</mat-option>
+                        <mat-option value="3">Proposal</mat-option>
+                        <mat-option value="4">In Negotiation</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Customer Status -->
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-default"
+                    *ngIf="rtype === 'customer'">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status" required>
+                        <mat-option value="1">Won</mat-option>
+                        <mat-option value="2">Lost</mat-option>
+                        <mat-option value="3">For Renewal</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-name">
+                    <mat-label>Name</mat-label>
+                    <input matInput required formControlName="name">
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-email">
+                    <mat-label>Email</mat-label>
+                    <input matInput required formControlName="email">
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="fld-phone">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput required formControlName="phone">
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="fld-phone">
+                    <mat-label>Alt. Phone</mat-label>
+                    <input matInput formControlName="altphone">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="col">
+            <app-address-book></app-address-book>
+        </div>
+    </div>
+
+</form>

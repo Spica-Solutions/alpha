@@ -5,10 +5,16 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AppUtilService {
+export class AppUIService {
 
   pageTitle: string = "";
   pageTitleChange: Subject<string> = new Subject<string>();
+
+  recordType: string = "";
+  recordTypeChange: Subject<string> = new Subject<string>();
+
+  recordId: string = "";
+  recordIdChange: Subject<string> = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +37,7 @@ export class AppUtilService {
     this.router.navigateByUrl(url);
   }
 
+  // Page Title - START
   setPageTitle(str) {
     console.log(`  >> setPageTitle('${str}')`);
     this.pageTitle = str;
@@ -40,4 +47,29 @@ export class AppUtilService {
   onSetPageTitleChange(): Observable<any> {
     return this.pageTitleChange.asObservable();
   }
+  // Page Title - END
+
+  // Record Type - START
+  setRecordType(str) {
+    console.log(`  >> setRecordType('${str}')`);
+    this.recordType = str;
+    this.recordTypeChange.next(this.recordType);
+  }
+
+  onRecordTypeChange(): Observable<any> {
+    return this.recordTypeChange.asObservable();
+  }
+  // Record Type - END
+
+  // Record Id - START
+  setRecordId(str) {
+    console.log(`  >> setRecordId('${str}')`);
+    this.recordType = str;
+    this.recordTypeChange.next(this.recordType);
+  }
+
+  onRecordIdChange(): Observable<any> {
+    return this.recordIdChange.asObservable();
+  }
+  // Record Type - END
 }
